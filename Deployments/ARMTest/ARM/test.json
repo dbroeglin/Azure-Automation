@@ -1,0 +1,36 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "12.1.0.0",
+	"parameters": {
+		"lbFrontendIpAddress": {
+			"type": "array",
+			"metadata": {
+				"description": "Loadbalancer front end IP addresses (static)"
+			}
+		},
+		"frontendIPAddresses": {
+			"type": "array",
+			"metadata": {
+				"description": "Netscaler frontend IP addresses"
+			}
+		},
+		"backendIPAddresses": {
+			"type": "array",
+			"metadata": {
+				"description": "Netscaler backend IP addresses"
+			}
+		}
+	},
+	"variables": {},
+	"resources": [],
+	"outputs": {
+		"back-0": {
+			"type": "string",
+			"value": "[parameters('backendIPAddresses')[0][0]]"
+		},
+		"front-0-0": {
+			"type": "string",
+			"value": "[parameters('frontendIPAddresses')[0][0]]"
+		}
+	}
+}
